@@ -1,7 +1,7 @@
-import HomePage from "./assets/pages/HomePage"
+import HomePage from "./pages/HomePage"
 import {Route , createBrowserRouter, createRoutesFromElements,RouterProvider} from 'react-router-dom';
-import InterviewSetup from "./assets/pages/InterviewSetup";
-import Intervew from "./assets/pages/Intervew";
+import InterviewSetup from "./pages/InterviewSetup";
+import Interview from "./pages/Interview";
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
       <Route>
         <Route path="/" element={<HomePage />}/>
         <Route path="/interview-setup" element={<InterviewSetup />}/>
-        <Route path="/interview" element={<Intervew />}/>
+        <Route path="/interview" element={<Interview />}/>
 
 
       </Route>

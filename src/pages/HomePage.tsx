@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Card from "../assets/components/Card"
+import Card from "../components/Card"
 import { Link } from "react-router";
 
 function HomePage() {
