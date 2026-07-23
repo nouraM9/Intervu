@@ -4,9 +4,10 @@ import profile from "../assets/logo.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [menuOpen , setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex h-20 items-center justify-between bg-white px-24">
+    <nav className="px-8 flex h-20 items-center justify-between bg-white md:px-24">
       {/* Logo */}
       <div className="flex items-center gap-4">
         <img
@@ -17,11 +18,11 @@ function Navbar() {
 
         <h1 className="title">Intervu</h1>
       </div>
-
+      
       {/* Right Side */}
-      <div className="flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-8">
         <button className="hover:text-violet-600 transition">
-          Dashboard
+          Home
         </button>
 
         <div className="relative">
@@ -66,6 +67,33 @@ function Navbar() {
         </div>
       </div>
 
+         <div className=" relative md:hidden">
+             <button id="menu-btn" className="block  focus:outline-none" onClick={()=> setMenuOpen(!menuOpen)}>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        {menuOpen &&(
+              <div className="absolute right-1 mt-3 w-44 rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
+                <button className="block w-full px-4 py-3 text-left hover:bg-(--bg)">
+                Home
+            </button>
+              <button className="block w-full px-4 py-3 text-left hover:bg-(--bg)">
+                Profile
+              </button>
+
+              <button className="block w-full px-4 py-3 text-left text-red-600 hover:bg-red-50">
+                Logout
+              </button>
+            </div>
+          )}
+             
+        
+
+            </div> 
+       
+
+       
      
     </nav>
   );
