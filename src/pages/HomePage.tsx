@@ -8,33 +8,36 @@ function HomePage() {
     const [latestScore,setLatestScore] = useState<number>(0); 
     const [totalInterviewsCount , setTotalInterviewCount] = useState<number>(0);
   return (
-    <>
-    <h1 className="text-blue-500 text-center ">Welcome {name}</h1>
-    <section className="flex flex-col justify-center items-center h-screen">
-    <div className="grid grid-cols-3 gap-5">
-        <Card>
-            <h3>Resume Status </h3>
-            <h3 className="mb-3">{resumeStatus}</h3>
-            <input type="file" />
+        <div className="mx-auto max-w-7xl px-6 py-16">
+            <div className="mb-10">
+                <h1 className=" title">Welcome , {name}</h1>
+                <p className="body-text-1 mt-2">You have 3 interviews completed,Keep going!</p>
+            </div>
+            <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3 mb-[24px]">
+                    <Card title = {'Resume'} value = {resumeStatus} />
+                    <Card title = {'Score'} value = {latestScore} />
+                    <Card title = {'Count'} value = {totalInterviewsCount} />
+                
 
+            </div>
+<Link
+  to="/interview-setup"
+  className="
+    inline-block
+    rounded-xl
+    bg-(--btn)
+    px-30
+    py-4
+    text-(--bg)
+    transition-colors
+    hover:bg-(--btn-gradiant)
+  "
+>
+  Start New Interview
+</Link>
 
-        </Card>
-        <Card>
-            <h3>latest Score</h3>
-            <h3>{latestScore}</h3>
-        </Card>
-        <Card>
-            <h3>Total Interviews </h3>
-            <h3>{totalInterviewsCount}</h3>
-        </Card>
-
-    </div>
-
-        <Link to = '/interview-setup' className="bg-blue-600 text-white p-2 rounded d-block" >Start Interview</Link>
-
-    </section>
-    
-    </>
+        </div>
+  
   )
 }
 
