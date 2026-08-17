@@ -1,0 +1,57 @@
+@import "tailwindcss";
+:root {
+  --text: #1F1926;
+  --btn : #5927E5;
+  --btn-gradiant: #a74fef;
+  --bg: #FDF7FF;
+  --border: #EAE0F5;
+  --accent: #FBB1FF;
+  --light-text :#868686;
+  --card-shadow: 0 8px 24px rgba(89, 39, 229, 0.1);
+   --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+
+
+
+}
+body{
+  background-color: var(--bg);
+;
+}
+@theme {
+  --font-sans: "Poppins", sans-serif;
+}
+
+@utility title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@utility heading-1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+@utility heading-2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+@utility body-text-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+@utility body-text-2 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
