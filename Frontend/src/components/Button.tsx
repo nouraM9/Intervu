@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 interface ButtonProp {
   children: React.ReactNode;
-  type?: "button" | "submit" | "reset" | "upload";
+  type?: "button" | "submit" | "reset";
   to?: string;
   onClick?: () => void;
 }
