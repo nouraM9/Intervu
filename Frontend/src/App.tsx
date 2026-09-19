@@ -10,7 +10,10 @@ import Interview from "./pages/Interview";
 import MainLayout from "./layouts/MainLayout";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import { Toaster } from "react-hot-toast";
 
+// inside your App component's return, usually near the top:
+<Toaster position="top-center" />;
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
