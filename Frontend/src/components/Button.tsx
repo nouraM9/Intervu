@@ -2,16 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 interface ButtonProp {
   children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
+  type?: "button" | "submit" | "reset" | "upload";
   to?: string;
   onClick?: () => void;
 }
 function Button({ children, type = "submit", to, onClick }: ButtonProp) {
   const className = `rounded-xl
             bg-(--btn)
-            px-30
+            px-20
             py-4
-            text-center
             text-(--bg)
             transition-colors
             hover:bg-(--btn-gradiant)`;
