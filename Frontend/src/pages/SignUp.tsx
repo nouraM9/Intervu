@@ -4,6 +4,7 @@ import { useState } from "react";
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useLocalStorageState from "use-local-storage-state";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -12,7 +13,10 @@ function SignUp() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [role, setRole] = useState<number>(1);
-
+  const [id, setId] = useLocalStorageState<number>("id", { defaultValue: 0 });
+  const [token, setToken] = useLocalStorageState<string>("authToken", {
+    defaultValue: "",
+  });
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
@@ -24,6 +28,10 @@ function SignUp() {
         role_id: role,
       })
       .then((response) => {
+        const receivedToken = response.data.token;
+        const receivedId = response.data.user.id;
+        setId(receivedId);
+        setToken(receivedToken);
         console.log(response.data);
         navigate("/dashboard");
       })
