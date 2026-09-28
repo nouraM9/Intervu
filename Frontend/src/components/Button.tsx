@@ -11,6 +11,7 @@ function Button({ children, type = "submit", to, onClick }: ButtonProp) {
             bg-(--btn)
             px-20
             py-4
+            mb-8
             text-(--bg)
             transition-colors
             hover:bg-(--btn-gradiant)`;
